@@ -17,11 +17,63 @@ h1{
 
 .square {
     text-transform: capitalize;
-    display: inline-block;
     border-style: solid;
     border-width: 2px;
     border-color: rgba(255, 255, 255, .3);
     width: 62px;
     height: 62px;
     margin: 3px;
+
+    font-size: 1.45em;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+
+.kb{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px;
+}
+
+.key{
+    text-transform: capitalize;
+font-size: .60em;
+    font-weight: bold;
+    height: 58px;
+    width: 43px;
+    margin: 0px 6px 0px 0px;
+    background-color: grey;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.lgKey{
+    text-transform: capitalize;
+font-size: .60em;
+    font-weight: bold;
+    height: 58px;
+    width: 88px;
+    margin: 0px 6px 0px 0px;
+    background-color: grey;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
