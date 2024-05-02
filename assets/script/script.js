@@ -3,22 +3,36 @@ import { words } from "./words.js";
 
 // Consts & vars
 const word = words[Math.floor(Math.random() * words.length)];
-const squaresEl = document.querySelectorAll(".square");
+// const word = "STILL";
+const cnt = document.querySelector(".container");
 const kbRowsEl = document.getElementsByClassName("kb");
 var currRow = 0,
   currSq = 0;
-var currSqEl = squaresEl[currSq];
 var alpha = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
 var cc = {};
 
+// Generating squares
+for (var i = 0; i < 6; i++) {
+  const dvR = document.createElement("div.row");
+  dvR.classList.add("row");
+  for (var j = 0; j < 5; j++) {
+    const dvSq = document.createElement("div");
+    dvSq.classList.add("square");
+    dvR.appendChild(dvSq);
+  }
+  cnt.appendChild(dvR);
+}
+const squaresEl = document.querySelectorAll(".square");
+var currSqEl = squaresEl[currSq];
+
 // Function to create & append a key with given text, row & size
 var createKey = (e, i, sz) => {
-  const dv = document.createElement("button");
+  const bt = document.createElement("button");
   const h1 = document.createElement("h1");
   h1.textContent = e;
-  dv.appendChild(h1);
-  dv.classList.add(sz);
-  kbRowsEl[i].appendChild(dv);
+  bt.appendChild(h1);
+  bt.classList.add(sz);
+  kbRowsEl[i].appendChild(bt);
 };
 
 // Function for adding EventListener to keypress/click
@@ -51,6 +65,7 @@ var pressKey = (el, src) => {
 // Function to initialise keyboard
 var initKb = () => {
   // Create keyboard
+  console.log(word);
   var currKbRow = 0;
   for (var i = 0; i < 3; i++) {
     if (i == 2) createKey("ENTER", i, "lgKey");
@@ -119,6 +134,6 @@ var won = () => {
 // Function to set a key a specific color
 var colorKey = (key, color) => {
   var azKeys = document.querySelectorAll(".key");
-  azKeys["QWERTYUIOPASDFGHJLKZXCVBNM".indexOf(key)].style.backgroundColor =
+  azKeys["QWERTYUIOPASDFGHJKLZXCVBNM".indexOf(key)].style.backgroundColor =
     color;
 };
